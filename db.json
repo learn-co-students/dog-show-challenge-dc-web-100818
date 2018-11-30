@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Adult",
       "breed": "Scottie Dog",
-      "sex": "female"
+      "sex": "afjfafj"
     },
     {
       "id": 2,
-      "name": "Teddy Roosevelt",
+      "name": "Teddy",
       "breed": "Rhodesian Ridgeback",
       "sex": "male"
     },
     {
       "id": 3,
-      "name": "Snickers",
-      "breed": "Dachshund",
-      "sex": "female"
+      "name": "Baby",
+      "breed": "Scottie Dog",
+      "sex": "male"
     },
     {
       "id": 4,

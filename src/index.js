@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const dogForm = document.querySelector('form');
   dogForm.addEventListener('submit', function(e) {
     updateDog(e);
-    getDogs();
   })
 })
 
@@ -20,6 +19,7 @@ function renderDogToDOM (dog) {
   const tableArea = document.querySelector('#table-body');
 
   let trElement = document.createElement('tr')
+  trElement.id = `dog-${dog.id}`
   let tdNameElement = document.createElement('td')
   tdNameElement.innerText = `${dog.name}`
   let tdBreedElement = document.createElement('td')
@@ -33,7 +33,6 @@ function renderDogToDOM (dog) {
   editBtn.addEventListener('click', function(e) {
     getDogForForm(e, dog)
   })
-
 
   tableArea.appendChild(trElement)
   trElement.append(tdNameElement, tdBreedElement, tdGenderElement, editBtn)
@@ -52,15 +51,13 @@ function getDogForForm(e, dog) {
   breedInput.value = `${dog.breed}`
   genderInput.value = `${dog.sex}`
 
-  fetch(`http://localhost:3000/dogs/${dog.id}`)
-    .then(res => res.json())
-    .then(data => console.log(data))
 }
 
 /////////////////////// Patch/Update Dog Data ///////////////////////////
 
 
 function updateDog(e) {
+  e.preventDefault()
   let dogId = e.currentTarget.children[0].classList[0].split('-')[1]
 
   let updateName = document.querySelector('#name').value;
@@ -73,7 +70,12 @@ function updateDog(e) {
     sex: updateGender
   }
 
-//  renderDogToDOM(data)
+  let parent = document.getElementById(`dog-${dogId}`)
+  parent.children[0].innerText = updateName;
+  parent.children[1].innerText = updateBreed;
+  parent.children[2].innerText = updateGender;
+
+  document.querySelector('form').reset()
 
   patchFetch(dogId, data)
 }
