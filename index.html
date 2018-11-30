@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>WKC Dog Show</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="./src/dog.js"></script>
+    <!-- <script src="./src/dog.js"></script>
     <script src="./src/adapter.js"></script>
-    <script src="./src/dogController.js"></script>
+    <script src="./src/dogController.js"></script> -->
     <script src="./src/index.js"></script>
     <link rel="stylesheet" href="./assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans" rel="stylesheet">
@@ -27,13 +27,13 @@
 
       <div class="margin flex">
         <h4 class='center'>Registered Dogs</h4>
-        <table class='margin' border="1">
+        <table id='dog-table' class='margin' border="1">
           <thead class='blue'>
             <tr class='padding'>
-              <th class='padding center'>Name</th>
-              <th class='padding center'>Breed</th>
-              <th class='padding center'>Sex</th>
-              <th class='padding center'>Edit Dog</th>
+              <th id='dog-name' class='padding center'>Name</th>
+              <th id='dog-breed'class='padding center'>Breed</th>
+              <th id='dog-sex'class='padding center'>Sex</th>
+              <th id='dog-edit'class='padding center'>Edit Dog</th>
             </tr>
           </thead>
           <tbody id="table-body">
